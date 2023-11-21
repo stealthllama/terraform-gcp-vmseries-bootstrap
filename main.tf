@@ -34,8 +34,8 @@ module "vmseries-modules_vmseries" {
       dns-secondary       = "8.8.4.4"
       op-command-modes    = "mgmt-interface-swap,jumbo-frame"
       plugin-op-commands  = "advance-routing:enable"
-      vm-series-auto-registration-pin-id    = var.cert-pin-id[terraform-gcp-vmseries-bootstrap]
-      vm-series-auto-registration-pin-value = var.cert-pin-value[terraform-gcp-vmseries-bootstrap]
-      authcodes           = var.authcodes[terraform-gcp-vmseries-bootstrap]
+      vm-series-auto-registration-pin-id    = var.cert-pin-id
+      vm-series-auto-registration-pin-value = var.cert-pin-value
+      authcodes           = var.authcodes
     }
 }
