@@ -12,6 +12,7 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
   region            = "us-central1"
   allowed_sources   = "0.0.0.0"
   vmseries_image    = "vmseries-flex-byol-1110"
+  ssh-keys          = var.ssh-keys
   bootstrap_options = {
       panorama-server     = "cloud"
       dgname              = "Test-Folder"
