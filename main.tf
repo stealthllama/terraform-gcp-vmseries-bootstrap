@@ -9,7 +9,7 @@ module "vmseries-modules_vmseries" {
   version = "1.2.6"
   # insert the 3 required variables here
   name             = "fw-vmseries-01"
-  zone             = "us-east1-b"
+  zone             = "us-central1-c"
   network_interfaces = [
       {
         subnetwork       = "fw-untrust-sub"
@@ -34,7 +34,8 @@ module "vmseries-modules_vmseries" {
       dns-secondary       = "8.8.4.4"
       op-command-modes    = "mgmt-interface-swap,jumbo-frame"
       plugin-op-commands  = "advance-routing:enable"
-      vm-series-auto-registration-pin-id    = "6f938e84-0211-4bcd-9ea5-6d314286af41"
-      vm-series-auto-registration-pin-value = "12314ece6a55485ab8af0603a4f85db4"
+      vm-series-auto-registration-pin-id    = var.cert-pin-id
+      vm-series-auto-registration-pin-value = var.cert-pin-value
+      authcodes           = var.authcodes
     }
 }
