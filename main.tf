@@ -22,8 +22,8 @@ module "vmseries-modules_vmseries" {
   ]
   vmseries_image   = "vmseries-flex-byol-1110"
   bootstrap_options = {
-      panorama-server = "cloud"
-      dgname=Test-Folder
+      panorama-server     = "cloud"
+      dgname              = "Test-Folder"
       dns-primary         = "8.8.8.8"
       dns-secondary       = "8.8.4.4"
       op-command-modes    = "mgmt-interface-swap,jumbo-frame"
