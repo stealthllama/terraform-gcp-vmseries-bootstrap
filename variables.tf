@@ -1,3 +1,15 @@
+variable "project" {
+    type = string
+}
+variable "region" {
+    type = string
+}
+variable "name" {
+    type = string
+}
+variable "folder" {
+    type = string
+}
 variable "authcodes" { 
     type = string 
 } 
