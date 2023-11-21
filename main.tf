@@ -13,7 +13,7 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
       dgname              = var.folder
       dns-primary         = "8.8.8.8"
       dns-secondary       = "8.8.4.4"
-      op-command-modes    = "mgmt-interface-swap"
+      # op-command-modes    = "mgmt-interface-swap"
       plugin-op-commands  = "advance-routing:enable"
       vm-series-auto-registration-pin-id    = var.cert-pin-id
       vm-series-auto-registration-pin-value = var.cert-pin-value
