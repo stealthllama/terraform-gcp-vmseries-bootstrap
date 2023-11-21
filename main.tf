@@ -1,3 +1,9 @@
+provider "google" {
+  project = "cloud-management-294622"
+  region  = "us-central1"
+  zone    = "us-central1-c"
+}
+
 module "vmseries-modules_vmseries" {
   source  = "PaloAltoNetworks/vmseries-modules/google//modules/vmseries"
   version = "1.2.6"
