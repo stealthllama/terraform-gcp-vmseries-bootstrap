@@ -10,7 +10,7 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
   name              = "gcp-fw"
   project           = "cloud-management-294622"
   region            = "us-central1"
-  allowed_sources   = {"0.0.0.0"}
+  allowed_sources   = ["0.0.0.0"]
   vmseries_image    = "vmseries-flex-byol-1110"
   ssh_keys          = var.ssh_keys
   bootstrap_options = {
