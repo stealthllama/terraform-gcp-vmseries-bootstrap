@@ -1,32 +1,17 @@
-provider "google" {
-  project = "cloud-management-294622"
-  region  = "us-central1"
-  zone    = "us-central1-c"
-}
+# provider "google" {
+#   project = "cloud-management-294622"
+#   region  = "us-central1"
+#   zone    = "us-central1-c"
+# }
 
-module "vmseries-modules_vmseries" {
-  source  = "PaloAltoNetworks/vmseries-modules/google//modules/vmseries"
+module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
+  source  = "PaloAltoNetworks/vmseries-modules/google//examples/standalone_vmseries_with_metadata_bootstrap"
   version = "1.2.6"
-  # insert the 3 required variables here
-  name             = "fw-vmseries-01"
-  zone             = "us-central1-c"
-  network_interfaces = [
-      {
-        subnetwork       = "fw-untrust-sub"
-        private_ip       = "10.10.11.2"
-        create_public_ip = true
-      },
-      {
-        subnetwork       = "fw-mgmt-sub"
-        private_ip       = "10.10.10.2"
-        create_public_ip = true
-      },
-      {
-        subnetwork = "fw-trust-sub"
-        private_ip = "10.10.12.2"
-      }
-  ]
-  vmseries_image   = "vmseries-flex-byol-1110"
+  name              = "gcp-fw"
+  project           = "cloud-management-294622"
+  region            = "us-central1"
+  allowed_sources   = "0.0.0.0"
+  vmseries_image    = "vmseries-flex-byol-1110"
   bootstrap_options = {
       panorama-server     = "cloud"
       dgname              = "Test-Folder"
@@ -37,5 +22,5 @@ module "vmseries-modules_vmseries" {
       vm-series-auto-registration-pin-id    = var.cert-pin-id
       vm-series-auto-registration-pin-value = var.cert-pin-value
       authcodes           = var.authcodes
-    }
+      }
 }
