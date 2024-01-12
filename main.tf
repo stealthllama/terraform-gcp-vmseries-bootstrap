@@ -11,8 +11,8 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
       type                = "dhcp-client"
       panorama-server     = "cloud"
       dgname              = var.folder
-      dns-primary         = "8.8.8.8"
-      dns-secondary       = "1.1.1.1"
+      dns-primary         = "8.8.4.4"
+      dns-secondary       = "1.2.3.4"
       # op-command-modes    = "mgmt-interface-swap"
       plugin-op-commands  = "advance-routing:enable"
       vm-series-auto-registration-pin-id    = var.cert-pin-id
