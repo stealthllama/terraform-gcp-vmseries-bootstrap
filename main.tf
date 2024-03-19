@@ -25,7 +25,7 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
         dhcp-accept-server-domain             = yes
         panorama-server                       = cloud
         dgname                                = var.folder
-        plugin-op-commands                    = advance-routing:enable
+        plugin-op-commands                    = "advance-routing:enable"
         vm-series-auto-registration-pin-id    = var.cert-pin-id
         vm-series-auto-registration-pin-value = var.cert-pin-value
         authcodes                             = var.authcodes
