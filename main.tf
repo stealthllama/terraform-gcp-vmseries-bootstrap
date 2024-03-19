@@ -40,27 +40,28 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
     }
   }
   networks = {
-  "vmseries-vpc" = {
-    vpc_name                        = "firewall-vpc"
-    create_network                  = true
-    delete_default_routes_on_create = "false"
-    mtu                             = "1460"
-    routing_mode                    = "REGIONAL"
-    subnetworks = {
-      "vmseries-sub" = {
-        name              = "vmseries-subnet"
-        create_subnetwork = true
-        #ip_cidr_range     = "172.21.21.0/24"
-        region            = "us-central1"
+    "vmseries-vpc" = {
+      vpc_name                        = "firewall-vpc"
+      create_network                  = true
+      delete_default_routes_on_create = "false"
+      mtu                             = "1460"
+      routing_mode                    = "REGIONAL"
+      subnetworks = {
+        "vmseries-sub" = {
+          name              = "vmseries-subnet"
+          create_subnetwork = true
+          #ip_cidr_range     = "172.21.21.0/24"
+          region            = "us-central1"
+        }
       }
-    }
-    firewall_rules = {
-      "allow-vmseries-ingress" = {
-        name             = "vmseries-mgmt"
-        source_ranges    = ["0.0.0.0/0"]
-        priority         = "1000"
-        allowed_protocol = "all"
-        allowed_ports    = []
+      firewall_rules = {
+        "allow-vmseries-ingress" = {
+          name             = "vmseries-mgmt"
+          source_ranges    = ["0.0.0.0/0"]
+          priority         = "1000"
+          allowed_protocol = "all"
+          allowed_ports    = []
+        }
       }
     }
   }
