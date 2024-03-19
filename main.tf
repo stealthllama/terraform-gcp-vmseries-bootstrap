@@ -40,7 +40,7 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
   }
   networks = {
     "vmseries-vpc" = {
-      vpc_name                        = "firewall-vpc"
+      vpc_name                        = "vmseries-vpc"
       create_network                  = true
       delete_default_routes_on_create = "false"
       mtu                             = "1460"
