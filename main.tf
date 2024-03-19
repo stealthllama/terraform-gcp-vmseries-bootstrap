@@ -48,8 +48,8 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
       subnetworks = {
         "vmseries-sub" = {
           name              = "vmseries-subnet"
-          create_subnetwork = true
-          ip_cidr_range     = "172.21.21.0/24"
+          create_subnetwork = false
+          #ip_cidr_range     = "172.21.21.0/24"
           region            = "us-central1"
         }
       }
