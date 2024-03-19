@@ -20,9 +20,9 @@ module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
         "https://www.googleapis.com/auth/monitoring.write",
       ]
       bootstrap_options = {
-        type                                  = dhcp-client
-        dhcp-accept-server-domain             = yes
-        panorama-server                       = cloud
+        type                                  = "dhcp-client"
+        dhcp-accept-server-domain             = "yes"
+        panorama-server                       = "cloud"
         dgname                                = var.folder
         plugin-op-commands                    = "advance-routing:enable"
         vm-series-auto-registration-pin-id    = var.cert-pin-id
