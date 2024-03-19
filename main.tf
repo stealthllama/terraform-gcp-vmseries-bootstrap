@@ -1,7 +1,6 @@
 module "vmseries-modules_example_standalone_vmseries_with_metadata_bootstrap" {
   source  = "PaloAltoNetworks/vmseries-modules/google//examples/standalone_vmseries_with_metadata_bootstrap"
   version = "1.3.3"
-  name              = var.name
   project           = var.project
 
   vmseries = {
